@@ -1,3 +1,5 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const express = require("express");
 const { createTables } = require("./helpers/userHelpers");
 const bodyParser = require("body-parser");
@@ -5,7 +7,7 @@ const dataRoutes = require("./routes/userroutes");
 
 // Create an Express application
 const app = express();
-
+const port = process.env.PORT || 4000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -17,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
     console.log("Tables created successfully!");
 
     // Start listening for incoming requests
-    const server = app.listen(4000, () => {
+    const server = app.listen(port, () => {
       console.log("Server is running on port 4000");
     });
 

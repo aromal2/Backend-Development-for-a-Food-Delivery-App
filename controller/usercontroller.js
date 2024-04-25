@@ -12,6 +12,7 @@ exports.dataController = async (req, res) => {
 
     // Call the calculateTotalPrice function to perform the calculation
     let datas = await userHelper.calculateTotalPrice(dat);
+     res.json({ total_price: datas });
   } catch (err) {
     // Log any errors that occur during the process
     console.error(err);

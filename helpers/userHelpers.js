@@ -6,11 +6,7 @@ const fs = require("fs");
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  user: process.env.PGUSER,
-  password: process.env.PGPASSWORD,
-  database: process.env.PGDATABASE,
-  host: process.env.PGHOST,
-  port: process.env.PGPORT,
+  url:process.env.CLOUDURL
 });
 
 async function createTables() {
@@ -83,6 +79,7 @@ async function calculateTotalPrice(reqBody) {
       // Handle the case where no rows are returned, if needed
     } else {
       // Return the calculated total price if needed
+      console.log(result);
       return result.rows[0].total_price;
     }
 
