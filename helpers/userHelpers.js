@@ -6,7 +6,11 @@ const fs = require("fs");
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  url:process.env.CLOUDURL
+  user:process.env.USERNAME,
+  password:process.env.PASSWORD,
+  database:process.env.DATABASE,
+  host: process.env.HOST,
+  port: process.env.PORT,
 });
 
 async function createTables() {
