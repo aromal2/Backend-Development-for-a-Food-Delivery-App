@@ -7,7 +7,7 @@ const dataRoutes = require("./routes/userroutes");
 
 // Create an Express application
 const app = express();
-const port = process.env.PORT || 4000;
+const port = 10000|| 4000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
