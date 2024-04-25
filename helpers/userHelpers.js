@@ -10,7 +10,9 @@ const pool = new Pool({
   password:process.env.PASSWORD,
   database:process.env.DATABASE,
   host: process.env.HOST,
-  port: process.env.PORT,
+  port: 5432,
+  internaldatabaseurl:process.env.INTERNALDATABASEURL,
+  externaldatabaseurl:process.env.EXTERNALDATABASEURL
 });
 
 async function createTables() {
